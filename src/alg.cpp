@@ -19,7 +19,7 @@ std::string infx2pstfx(std::string inf) {
         stack.push(inf[i]);
       } else if (stack.isEmpty()) {
           stack.push(inf[i]);
-      } else if ((priority(inf[i]) > prioy(stack.get()))) {
+      } else if ((prior(inf[i]) > prior(stack.get()))) {
           stack.push(inf[i]);
       } else if (prior(inf[i]) == 1) {
         while (prior(stack.get()) != 0) {
