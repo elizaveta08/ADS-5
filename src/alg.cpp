@@ -50,6 +50,7 @@ std::string infx2pstfx(std::string inf) {
       resultat.erase(resultat.size() - 1);
   }
   return resultat;
+}
   int calculating(char operation, int x, int y) {
   switch (operation) {
     case '+':
@@ -65,6 +66,7 @@ std::string infx2pstfx(std::string inf) {
       return x / y;
       break;
   }
+  }
   return 0;
   int prior(char op) {
     if (op == '(') {
@@ -78,8 +80,8 @@ std::string infx2pstfx(std::string inf) {
     }
     return -1;
 }
-  return ("");
-}
+//  return ("");
+//}
 int eval(std::string pref) {
   // Функция eval должна вычислять выражение,
   //  записанное в постфиксном виде и выдавать целое значение.
