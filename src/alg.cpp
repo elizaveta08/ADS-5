@@ -57,17 +57,18 @@ std::string infx2pstfx(std::string inf) {
       return x + y;
       break;
     case '-':
-      return x - y;
+      return y - x;
       break;
     case '*':
       return x * y;
       break;
     case '/':
-      return x / y;
+      return y / x;
       break;
   }
-  //}
-  //return 0;
+    return 0;
+  }
+  return 0;
   int prior(char op) {
     if (op == '(') {
         return 1;
