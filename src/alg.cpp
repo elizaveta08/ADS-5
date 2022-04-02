@@ -101,5 +101,5 @@ int eval(std::string pref) {
   }
   int zeloeznachenie = stack2.get();
   return zeloeznachenie;
-  return 0;
+  // return 0;
 }
