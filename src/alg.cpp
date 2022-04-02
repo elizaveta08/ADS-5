@@ -66,8 +66,8 @@ std::string infx2pstfx(std::string inf) {
       return x / y;
       break;
   }
-  }
-  return 0;
+  //}
+  //return 0;
   int prior(char op) {
     if (op == '(') {
         return 1;
