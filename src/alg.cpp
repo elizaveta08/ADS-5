@@ -78,7 +78,7 @@ std::string infx2pstfx(std::string inf) {
     }
     return -1;
 }
-  return std::string("");
+  return ("");
 }
 int eval(std::string pref) {
   // Функция eval должна вычислять выражение,
