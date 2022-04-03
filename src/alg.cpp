@@ -2,6 +2,20 @@
 #include <string>
 #include <map>
 #include "tstack.h"
+#include <iostream>
+int prior(char op) {
+    if (op == '(') {
+        return 1;
+    }
+    if (op == '+' || op == '-') {
+        return 2;
+    }
+    if (op == '*' || op == '/') {
+        return 3;
+    }
+    return -1;
+    default: return 4;
+}
 std::string infx2pstfx(std::string inf) {
   // Функция infx2pstfx должна преобразовывать входную строку,
   //  содержащую выражение в инфиксной форме в выходную строку,
@@ -51,8 +65,8 @@ std::string infx2pstfx(std::string inf) {
   }
   return resultat;
 }
-  int calculating(char operation, int x, int y) {
-  switch (operation) {
+int calculating(char operation, int x, int y) {
+switch (operation) {
     case '+':
       return x + y;
       break;
@@ -69,18 +83,7 @@ std::string infx2pstfx(std::string inf) {
     return 0;
   }
   // return 0;
-  int prior(char op) {
-    if (op == '(') {
-        return 1;
-    }
-    if (op == '+' || op == '-') {
-        return 2;
-    }
-    if (op == '*' || op == '/') {
-        return 3;
-    }
-    return -1;
-}
+  
 //  return ("");
 //}
 int eval(std::string pref) {
@@ -100,7 +103,10 @@ int eval(std::string pref) {
       stack2.push(calculating(pref[i], x, y));
     }
   }
-  int zeloeznachenie = stack2.get();
+  zeloeznachenie = stack2.get();
   return zeloeznachenie;
   // return 0;
+}
+int main() {
+    std::cout<<infx2pstfx("2+2");
 }
