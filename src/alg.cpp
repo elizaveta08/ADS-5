@@ -89,14 +89,14 @@ int eval(std::string pref) {
   //  записанное в постфиксном виде и выдавать целое значение.
   // Все расчеты ведутся в целых числах!
   TStack <int, 100> stack2;
-  int zeloeznachenie = 0;
+  int zeloeznachenie, x, y = 0;
   for (int i = 0; i < pref.size(); i++) {
-    if (prior(pref[i]) == -1) {
+    if (pref[i] >= '0') {
       stack2.push(pref[i] - '0');
     } else if (prior(pref[i]) <= 3) {
-      int x = stack2.get();
+      x = stack2.get();
       stack2.pop();
-      int y = stack2.get();
+      y = stack2.get();
       stack2.pop();
       stack2.push(calculating(pref[i], x, y));
     }
