@@ -1,8 +1,8 @@
 // Copyright 2021 NNTU-CS
 #include <string>
+#include <iostream>
 #include <map>
 #include "tstack.h"
-#include <iostream>
 int prior(char op) {
     if (op == '(') {
         return 1;
@@ -83,7 +83,6 @@ switch (operation) {
     return 0;
   }
   // return 0;
-  
 //  return ("");
 //}
 int eval(std::string pref) {
@@ -108,5 +107,5 @@ int eval(std::string pref) {
   // return 0;
 }
 int main() {
-    std::cout<<infx2pstfx("2+2");
+    std::cout << infx2pstfx("2+2");
 }
