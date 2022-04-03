@@ -26,5 +26,5 @@ class TStack {
          if (top < size - 1)
              arr[++top] = item;
      }
-}
+};
 #endif  // INCLUDE_TSTACK_H_
