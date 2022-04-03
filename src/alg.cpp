@@ -14,7 +14,6 @@ int prior(char op) {
         return 3;
     }
     return -1;
-    default: return 4;
 }
 std::string infx2pstfx(std::string inf) {
   // Функция infx2pstfx должна преобразовывать входную строку,
@@ -25,7 +24,7 @@ std::string infx2pstfx(std::string inf) {
   char probel = ' ';
   TStack <char, 100> stack;
   for (int i = 0; i < inf.size(); i++) {
-    if (prior(inf[i]) == 4) {
+    if (prior(inf[i]) == -1) {
       resultat.push_back(inf[i]);
       resultat.push_back(probel);
     } else {
