@@ -4,16 +4,16 @@
 #include <map>
 #include "tstack.h"
 int prior(char op) {
-    if (op == '(') {
-        return 1;
-    }
-    if (op == '+' || op == '-') {
-        return 2;
-    }
-    if (op == '*' || op == '/') {
-        return 3;
-    }
-    return -1;
+  switch (op) {
+  case '(': return 0;
+  case ')': return 1;
+  case '-': return 2;
+  case '+': return 2;
+  case '*': return 3;
+  case '/': return 3;
+  case ' ': return 5;
+  default: return 4;
+  }
 }
 std::string infx2pstfx(std::string inf) {
   // Функция infx2pstfx должна преобразовывать входную строку,
@@ -24,7 +24,7 @@ std::string infx2pstfx(std::string inf) {
   char probel = ' ';
   TStack <char, 100> stack;
   for (int i = 0; i < inf.size(); i++) {
-    if (prior(inf[i]) == -1) {
+    if (prior(inf[i]) == 4) {
       resultat.push_back(inf[i]);
       resultat.push_back(probel);
     } else {
@@ -104,7 +104,4 @@ int eval(std::string pref) {
   zeloeznachenie = stack2.get();
   return zeloeznachenie;
   // return 0;
-}
-int main() {
-    std::cout << infx2pstfx("2+2");
 }
